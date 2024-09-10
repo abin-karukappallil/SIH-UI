@@ -16,7 +16,7 @@ extend({ ThreeGlobe });
 
 const RING_PROPAGATION_SPEED = 3;
 const aspect = 1.2;
-const cameraZ = 300;
+const cameraZ = 290;
 
 type Position = {
   order: number;
@@ -81,7 +81,7 @@ export function Globe({ globeConfig, data }: WorldProps) {
     showAtmosphere: true,
     atmosphereAltitude: 0.1,
     polygonColor: "rgba(255,255,255,0.7)",
-    globeColor: "#1d072e",
+    globeColor: "#ffffff",
     emissive: "#000000",
     emissiveIntensity: 0.1,
     shininess: 0.9,

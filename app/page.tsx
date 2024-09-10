@@ -9,7 +9,7 @@ export default function Home() {
   const globeConfig = {
     pointSize: 4,
     globeColor: "#1d072e",
-    polygonColor: "#00AF06",
+    polygonColor: "#ffffff",
     showAtmosphere: false,
     emissive: "#000000",
     emissiveIntensity: 5,
@@ -18,7 +18,7 @@ export default function Home() {
     arcLength: 1
   };
 
-  const colors = ["#008F06"];
+  const colors = ["#ffffff"];
   const sampleArcs = [
     {
       order: 1,
@@ -383,25 +383,23 @@ export default function Home() {
   ];
 
   return (
-   <section className="overflow-hidden">
-        <div className="flex flex-col items-center min-w-screen justify-center py-20 min-h-screen md:h-auto dark:bg-black bg-slate-900 relative w-full">
-      <div className="max-w-7xl mx-auto w-full relative overflow-hidden h-full md:h-[40rem] px-0">
+   <section className="overflow-x-hidden overflow-y-hidden overflow-clip flex flex-col justify-center items-center">
+    <h2 className="text-center text-xl mt-9 md:text-4xl overflow-y-hidden font-bold text-slate-100 dark:text-white">
+           FakeHunter
+          </h2>
+        <div className="max-w-7xl flex flex-col justify-center items-center mx-auto w-full relative overflow-y-hidden h-screen md:h-[57rem] z-10 px-0">
+        
+      <div className="max-w-7xl mx-auto w-full relative overflow-y-hidden h-screen md:h-[40rem] px-0">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1 }}
         >
-          <h2 className="text-center text-xl md:text-4xl font-bold text-slate-100 dark:text-white">
-           Social Media Spam Detector
-          </h2>
         </motion.div>
         <Globe data={sampleArcs} globeConfig={globeConfig}/>
       </div>
-      <h2 className="text-center text-xl md:text-4xl font-bold text-slate-100 dark:text-white">
-           Get started here
-          </h2>
-        <button className="mt-11 bg-slate-400 rounded-xl min-w-36 min-h-10">
-          GO
+        <button className="mt-11 bg-slate-700 text-slate-50 rounded-xl min-w-36 min-h-10">
+        Get started here
         </button>
 
     </div>
