@@ -258,8 +258,8 @@ export function World(props: WorldProps) {
         enablePan={false}
         enableZoom={false}
         enableRotate={false}
-        minDistance={cameraZ}
-        maxDistance={cameraZ}
+        minDistance={cameraZ * 0.8}
+        maxDistance={cameraZ * 0.8}
         autoRotateSpeed={1}
         autoRotate={true}
         minPolarAngle={Math.PI / 3.5}

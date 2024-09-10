@@ -384,12 +384,12 @@ export default function Home() {
 
   return (
    <section className="overflow-x-hidden overflow-y-hidden overflow-clip flex flex-col justify-center items-center">
-    <h2 className="text-center text-xl mt-9 md:text-4xl overflow-y-hidden font-bold text-slate-100 dark:text-white">
-           FakeHunter
+    <h2 className="text-center text-4xl mt-9 uppercase md:text-5xl overflow-y-hidden font-bold text-slate-100 dark:text-white">
+           Fake <span className="text-[#b59958]">Hunter</span>
           </h2>
         <div className="max-w-7xl flex flex-col justify-center items-center mx-auto w-full relative overflow-y-hidden h-screen md:h-[57rem] z-10 px-0">
         
-      <div className="max-w-7xl mx-auto w-full relative overflow-y-hidden h-screen md:h-[40rem] px-0">
+      <div className="max-w-7xl mx-auto w-full relative overflow-y-hidden h-60 md:h-[43rem] px-0">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
