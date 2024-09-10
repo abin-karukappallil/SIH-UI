@@ -43,3 +43,13 @@
 body, html {
   overflow: hidden; 
 }
+.glow-effect {
+  text-shadow: 0 0 5px rgba(255, 255, 255, 0.8), 
+               0 0 5px rgba(255, 255, 255, 0.6),
+               0 0 10px rgba(255, 255, 255, 0.4);
+}
+.glow-effect span {
+  text-shadow: 0 0 5px rgba(181, 153, 88, 0.8), 
+               0 0 5px rgba(181, 153, 88, 0.6),
+               0 0 10px rgba(181, 153, 88, 0.4);
+}
