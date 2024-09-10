@@ -3,6 +3,9 @@ import React from 'react';
 import { useSearchParams } from "next/navigation";
 import axios from 'axios';
 import './page.module.css'
+import LoadingCircle from "../../components/ui/LoadingCircle";
+
+
 
 const Page = () => {
     const searchParams = useSearchParams();
@@ -33,11 +36,11 @@ const Page = () => {
 
     return (
         <section className="loading-container">
-            {/* {loading ? (
-                <div className="loading">
-                    <div className="spinner"></div>
-                    <p>Loading...</p>
-                </div>
+            {loading ? (
+               <div className="flex flex-col items-center justify-center min-h-screen">
+               <h1 className="text-2xl mb-4">Loading...</h1>
+               <LoadingCircle />
+             </div>
             ) : error ? (
                 <p className="error">{error}</p>
             ) : (
@@ -45,13 +48,13 @@ const Page = () => {
                     <h2 className="title">Fake <span className="highlight">Hunter</span></h2>
                     <h3 className='score'>Fraud Score = {score}</h3>
                 </div>
-            )} */}
-            <div className="result flex flex-col items-center justify-between">
+            )}
+            {/* <div className="result flex flex-col items-center justify-between">
                 <h2 className="text-center text-4xl mt-6  uppercase md:text-5xl overflow-y-hidden font-bold text-slate-100 glow-effect dark:text-white">
                     Fake <span className="text-[#b59958]">Hunter</span>
                 </h2>
                 <h3 className='font-extrabold text-4xl mt-80 score'>Fraud Score = {score}null</h3>
-            </div>
+            </div> */}
         </section>
     );
 };
