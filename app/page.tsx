@@ -1,48 +1,30 @@
 "use client";
-import { motion } from "framer-motion"; // Use motion, not div
+import { motion } from "framer-motion";
 import dynamic from 'next/dynamic';
-import { useRouter, redirect } from 'next/navigation'; // Correct import for Next.js router
+import { useRouter } from 'next/navigation';
 import {
   Modal,
   ModalBody,
   ModalContent,
-  ModalFooter,
   ModalTrigger,
 } from "../components/ui/animated-modal";
 import { useState } from "react";
-import { loadBindings } from "next/dist/build/swc";
 
 const Globe = dynamic(() => import("../components/ui/globe").then((m) => m.World), {
   ssr: false,
 });
 
 export default function Home() {
-  
-
   const [username, setUsername] = useState('');
-  const router = useRouter(); // Initialize useRouter
+  const router = useRouter();
 
   const handleShort = async (e:any) => {
-    e.preventDefault(); // Prevent default form submission
+    e.preventDefault();
+  
     if (username) {
-      try {
-        const url = `https://jsonplaceholder.typicode.com/comments?postId=${username}`;
-        const res = await fetch(url);
-
-        if (!res.ok) {
-          throw new Error('Network response was not ok');
-        }
-
-        const data = await res.json();
-        // Handle the data if needed
-
-         redirect('/deatils')
-      } catch (error) {
-        console.error('Error fetching data:', error);
-      }
+      router.push(`/details?username=${username}`);
     }
   };
-
 
   const globeConfig = {
     pointSize: 4,
@@ -427,13 +409,6 @@ export default function Home() {
       </h2>
       <div className="max-w-7xl mt-3 flex flex-col justify-center items-center mx-auto w-full relative overflow-y-hidden h-screen md:h-[57rem] z-10 px-0">
         <div className="max-w-7xl mx-auto w-full relative overflow-y-hidden h-60 md:h-[43rem] px-0">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1 }}
-          >
-            {/* Your motion content here */}
-          </motion.div>
           <Globe data={sampleArcs} globeConfig={globeConfig} />
         </div>
         <div className="py-40 flex items-center justify-center">
@@ -448,44 +423,47 @@ export default function Home() {
             </ModalTrigger>
             <ModalBody>
               <ModalContent className="bg-gray-900">
-                <h4 className="text-lg md:text-2xl text-white dark:text-neutral-100 font-bold text-center mb-8">
-                  Enter the username
-                </h4>
-                <input
-                  type="text"
-                  onChange={(e) => setUsername(e.target.value)}
-                  placeholder="username"
-                  className="bg-slate-600 opacity-30 p-2 border rounded-xl text-white shadow-lg"
-                />
-                <div className="text-white mb-6">
-                  <br />
-                  <p className="mb-2">Select your platform:</p>
-                  <label className="flex items-center mb-2">
-                    <input type="checkbox" className="mr-2" /> Instagram
-                  </label>
-                  <label className="flex items-center mb-2">
-                    <input type="checkbox" className="mr-2" /> Facebook
-                  </label>
-                  <label className="flex items-center">
-                    <input type="checkbox" className="mr-2" /> Twitter
-                  </label>
-                </div>
+                <form onSubmit={handleShort} className="flex flex-col justify-center items-center">
+                  <h4 className=" text-lg md:text-2xl text-white dark:text-neutral-100 font-bold text-center mb-8">
+                    Enter the username
+                  </h4>
+                  <input
+                    type="text"
+                    value={username}
+                    onChange={(e) => setUsername(e.target.value)}
+                    placeholder="username "
+                    className="mt-20 bg-slate-600 opacity-30 p-2 border rounded-xl text-white shadow-lg"
+                  />
+                  {/* <div className="text-white mb-6">
+                    <br />
+                    <p className="mb-2">Select your platform:</p>
+                    <label className="flex items-center mb-2">
+                      <input type="checkbox" className="mr-2" /> Instagram
+                    </label>
+                    <label className="flex items-center mb-2">
+                      <input type="checkbox" className="mr-2" /> Facebook
+                    </label>
+                    <label className="flex items-center">
+                      <input type="checkbox" className="mr-2" /> Twitter
+                    </label>
+                  </div> */}
+                 <div className="mt-32 flex flex-row gap-x-7">
+                 <button
+                    type="button"
+                    onClick={() => window.location.reload()}
+                    className="px-2 py-1 rounded-xl bg-black text-white dark:bg-black dark:border-black dark:text-white border border-gray-300 text-sm w-28"
+                  >
+                    Cancel
+                  </button>
+                  <button
+                    type="submit"
+                    className="bg-gray-200 rounded-xl text-black dark:bg-white dark:text-black text-sm px-2 py-1 border border-black w-28"
+                  >
+                    Continue
+                  </button>
+                 </div>
+                </form>
               </ModalContent>
-              <ModalFooter className="gap-4 bg-gray-900">
-                <button
-                  onClick={() => window.location.reload()}
-                  className="px-2 py-1 rounded-xl bg-black text-white dark:bg-black dark:border-black dark:text-white border border-gray-300 text-sm w-28"
-                >
-                  Cancel
-                </button>
-                <button
-                type="submit"
-                  onClick={handleShort}
-                  className="bg-gray-200 rounded-xl text-black dark:bg-white dark:text-black text-sm px-2 py-1 border border-black w-28"
-                >
-                  Continue
-                </button>
-              </ModalFooter>
             </ModalBody>
           </Modal>
         </div>
