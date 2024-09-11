@@ -432,7 +432,7 @@ export default function Home() {
                     value={username}
                     onChange={(e) => setUsername(e.target.value)}
                     placeholder="username "
-                    className="mt-20 bg-slate-600 opacity-30 p-2 border rounded-xl text-white shadow-lg"
+                    className="mt-20 bg-slate-600 opacity-75 font-semibold p-2 border rounded-xl text-white shadow-lg"
                   />
                   {/* <div className="text-white mb-6">
                     <br />

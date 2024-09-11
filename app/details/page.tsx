@@ -41,7 +41,7 @@ const Page = () => {
       }
 
       try {
-        const url = `http://192.168.166.146:8000/instagram?username=${encodeURIComponent(username)}`;
+        const url = `http://192.168.232.146:8000/instagram?username=${encodeURIComponent(username)}`;
         const response = await fetch(url);
 
         if (!response.ok) {
@@ -98,7 +98,17 @@ const Page = () => {
         />
       {apiResponse?.response && (
   <div className="text-md flex flex-col gap-2 sm:text-xl text-netural-200 mt-4 mb-2 dark:text-neutral-200">
-    <h1 className="uppercase text-2xl">genuinity: {apiResponse.response.score ?? 'N/A'}</h1>
+<h1
+  className={`uppercase text-2xl ${
+    parseInt(apiResponse.response.score) >= 80
+      ? 'text-green-500'
+      : parseInt(apiResponse.response.score) <= 45
+      ? 'text-red-500'
+      : 'text-yellow-500'
+  }`}
+>
+  genuinity: {apiResponse.response.score ?? 'N/A'}
+</h1>
     <h2>Name: {apiResponse.response.full_name !== '.' ? apiResponse.response.full_name : 'N/A'}</h2>
     <h3>Followers: {apiResponse.response.followers ?? 'N/A'}</h3>
     <h3>Following: {apiResponse.response.followees ?? 'N/A'}</h3>
