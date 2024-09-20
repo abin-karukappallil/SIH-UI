@@ -1,5 +1,4 @@
 "use client";
-import { motion } from "framer-motion";
 import dynamic from 'next/dynamic';
 import { useRouter } from 'next/navigation';
 import {
@@ -18,7 +17,7 @@ export default function Home() {
   const [username, setUsername] = useState('');
   const router = useRouter();
 
-  const handleShort = async (e:any) => {
+  const handleShort = async (e:React.FormEvent) => {
     e.preventDefault();
   
     if (username) {

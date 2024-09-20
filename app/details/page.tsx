@@ -5,7 +5,6 @@ import { useSearchParams } from 'next/navigation';
 import './page.module.css';
 import LoadingCircle from '../../components/ui/LoadingCircle';
 import { BackgroundGradient } from "../../components/ui/background-gradient";
-import { IconAppWindow } from "@tabler/icons-react";
 import Image from "next/image";
  
 
