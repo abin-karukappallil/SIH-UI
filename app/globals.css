@@ -4,31 +4,39 @@
 
 @layer base {
   :root {
-
-    --background: 113.2 54% 1%;
-    --foreground: 210 40% 98%;
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-    --chart-1: 220 70% 50%;
-    --chart-2: 160 60% 45%;
-    --chart-3: 30 80% 55%;
-    --chart-4: 280 65% 60%;
-    --chart-5: 340 75% 55%;
+    --background: hsl(170, 23%, 30%); /* Light gray, not pure white */
+    --foreground: hsl(209, 29%, 83%); /* Darker gray for text */
+  
+    --card: hsl(0, 0%, 98%); /* Softer white for cards */
+    --card-foreground: hsl(210, 15%, 20%); /* Darker text on cards */
+  
+    --popover: hsl(189, 64%, 61%); /* Light gray for popovers */
+    --popover-foreground: hsl(210, 15%, 20%); /* Darker text in popovers */
+  
+    --primary: hsl(220, 60%, 50%); /* Blue for primary elements */
+    --primary-foreground: hsl(0, 0%, 100%); /* White text on primary elements */
+  
+    --secondary: hsl(208, 100%, 78%); /* Light blue for secondary elements */
+    --secondary-foreground: hsl(210, 15%, 20%); /* Darker text for secondary */
+  
+    --muted: hsl(210, 25%, 95%); /* Very light gray for muted elements */
+    --muted-foreground: hsl(210, 10%, 50%); /* Muted text color */
+  
+    --accent: hsl(160, 60%, 45%); /* Green for accents */
+    --accent-foreground: hsl(0, 0%, 100%); /* White text on accent elements */
+  
+    --destructive: hsl(0, 70%, 50%); /* Red for destructive actions */
+    --destructive-foreground: hsl(0, 0%, 100%); /* White text on destructive elements */
+  
+    --border: hsl(210, 20%, 85%); /* Light gray border */
+    --input: hsl(210, 40%, 95%); /* Soft light gray for inputs */
+    --ring: hsl(212, 40%, 80%); /* Focus ring color */
+  
+    --chart-1: hsl(220, 70%, 50%); /* Blue for charts */
+    --chart-2: hsl(160, 60%, 45%); /* Green for charts */
+    --chart-3: hsl(30, 80%, 55%); /* Yellow for charts */
+    --chart-4: hsl(280, 65%, 60%); /* Purple for charts */
+    --chart-5: hsl(340, 75%, 55%); /* Pink for charts */
   }
 }
 
